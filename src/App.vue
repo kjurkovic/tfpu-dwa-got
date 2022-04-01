@@ -1,10 +1,23 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid ">
+      <button type="button" class="btn btn-primary" aria-label="Close" @click="navigateBack">Back</button>
+    </div>
   </nav>
   <router-view/>
 </template>
+
+<script>
+
+export default {
+  name: 'App',
+  methods: {
+    navigateBack() {
+      window.history.go(-1)
+    }
+  }
+}
+</script>
 
 <style>
 #app {
